@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import tw from "tailwind-styled-components"
 import Map from './components/Map'
+import Link from 'next/link'
 
 
 
@@ -13,7 +14,6 @@ export default function Home() {
     <Wrapper>
       <Map />
       <ActionItem>
-        {/*Header */}
         <Header>
           <UberLogo src="https://i.ibb.co/N7x0bsK/Uber-Logo-Black.png" />
           <Profile>
@@ -22,10 +22,12 @@ export default function Home() {
           </Profile>
         </Header>
         <ActionButtons>
+          <Link href="/search">
           <ActionButton>
             <ActionButtonImage src="https://i.ibb.co/cyvcpfF/uberx.png"/>
             Ride
           </ActionButton>
+          </Link>
           <ActionButton>
             <ActionButtonImage src="https://i.ibb.co/n776JLm/bike.png"/>
             Wheels</ActionButton>
