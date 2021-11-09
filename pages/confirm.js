@@ -5,13 +5,14 @@ import { useRouter } from 'next/router'
 
 
 const Confirm = () => {
+    const router = useRouter()
+    const { pickup, dropoff } = router.query
 
     const [pickupCoordinates, setPickupCoordinates] = useState()
     const [dropoffCoordinates, setDropoffCoordinates] = useState()
 
-    const getPickupCoordinates = () => {
+    const getPickupCoordinates = (pickup) => {
 
-        const pickup = "Santa Monica";
         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
             new URLSearchParams({
                 access_token: "pk.eyJ1IjoibXVzdGFmYW96dHVyazM0IiwiYSI6ImNrdm1iNXd2dTA5NWIycGpwYWJrbWt5Y2kifQ.TtejJBtK0J0XU85fgsO6eg",
@@ -24,9 +25,8 @@ const Confirm = () => {
         })
     }
 
-    const getDropoffCoordinates = () => {
+    const getDropoffCoordinates = (dropoff) => {
 
-        const dropoff = "Los Angeles";
         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
             new URLSearchParams({
                 access_token: "pk.eyJ1IjoibXVzdGFmYW96dHVyazM0IiwiYSI6ImNrdm1iNXd2dTA5NWIycGpwYWJrbWt5Y2kifQ.TtejJBtK0J0XU85fgsO6eg",
@@ -40,9 +40,9 @@ const Confirm = () => {
     }
 
     useEffect(() => {
-        getPickupCoordinates();
-        getDropoffCoordinates();
-    }, [])
+        getPickupCoordinates(pickup);
+        getDropoffCoordinates(dropoff);
+    }, [pickup, dropoff])
     
     return (
         <Wrapper>
