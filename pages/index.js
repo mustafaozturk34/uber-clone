@@ -18,7 +18,7 @@ export default function Home() {
           <UberLogo src="https://i.ibb.co/N7x0bsK/Uber-Logo-Black.png" />
           <Profile>
             <Name>Mustafa Ozturk</Name>
-            <UserImage src="https://lh3.googleusercontent.com/-Jk5IoRTcmWw/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnxZ3LspfmMwKDgMETGwPNYozTfdQ/s48-c/photo.jpg" />
+            <UserImage src="https://lh3.googleusercontent.com/ogw/ADea4I5LhI80rT796LZvFWsCblsU5oKcyVT0BmdMMaw=s32-c-mo" />
           </Profile>
         </Header>
         <ActionButtons>
